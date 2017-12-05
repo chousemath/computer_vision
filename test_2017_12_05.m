@@ -43,7 +43,26 @@ waitforbuttonpress;
 % you can take the difference of two images
 test_gray_1 = rgb2gray(test_img_2(1:100,1:100,:));
 test_gray_2 = rgb2gray(imread('img/forest.jpg')(1:100,1:100,:));
-imshow(test_gray_1 - test_gray_2);
+% take the absolute value of the difference because we only care about
+% the magnitude of the difference between two images
+imshow(abs(test_gray_1 - test_gray_2));
+waitforbuttonpress;
+
+% you can generate a single random number
+randn
+% or you can generate vectors/matrices of random numbers
+randn([1 3])
+randn([2 2])
+% generating and displaying Gaussian noise
+noise = randn([1 100]);
+[n, x] = hist(noise, [-2 -1 0 1 2]);
+disp([n;x]);
+plot(x,n);
+waitforbuttonpress;
+
+noise2 = randn([1 1000000]);
+[count, bins] = hist(noise2, linspace(-3, 3, 105));
+plot(bins, count);
 waitforbuttonpress;
 
 close all;
