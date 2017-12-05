@@ -51,7 +51,7 @@ waitforbuttonpress;
 
 % define a function for scaling
 function result = scale(img, value)
-    result = value .* img;
+  result = value .* img;
 endfunction
 
 % load two images
